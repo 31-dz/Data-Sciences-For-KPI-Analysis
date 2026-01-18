@@ -100,7 +100,7 @@ plt.tight_layout()
 plt.savefig('plot5_flare_by_cause.png', dpi=300, bbox_inches='tight')
 plt.show()
 
-# 6. BONUS: Stacked Area Chart showing contribution by cause over time
+# 6. Stacked Area Chart showing contribution by cause over time
 plt.figure(figsize=(15, 7))
 # Resample to daily for cleaner visualization
 daily_data = df.set_index('timestamp')[cause_columns].resample('D').sum()
@@ -146,7 +146,7 @@ plt.figure(figsize=(12, 6))
 # Filter out zero values for better visualization
 normal_ops_data = df[df['normal_operations_m3_per_hour'] > 0]['normal_operations_m3_per_hour']
 
-# Create histogram with KDE overlay
+# 8. Create histogram with KDE overlay
 plt.hist(normal_ops_data, bins=50, color='#3498db', alpha=0.6, edgecolor='black', density=True, label='Histogram')
 normal_ops_data.plot(kind='kde', color='#e74c3c', linewidth=2, label='KDE')
 
@@ -168,3 +168,4 @@ plt.show()
 
 print("\nAll plots have been generated and saved successfully!")
 print("Total plots created: 8")
+
